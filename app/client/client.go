@@ -40,7 +40,7 @@ func doRequest(req *fasthttp.Request) ([]byte, fasthttp.ResponseHeader, error) {
 
 	err := client.Do(req, resp)
 	if err != nil {
-		return nil, fasthttp.ResponseHeader{}, errors.New("Request failed!")
+		return nil, fasthttp.ResponseHeader{}, errors.New("request failed")
 
 	}
 	return resp.Body(), resp.Header, nil
@@ -150,7 +150,7 @@ func (m *MFPClient) login() error {
 	m.MFPCallbackCode = result[1]
 	err = m.loginCallBack()
 	if err != nil {
-		return errors.New("Sending callbackcode failed!")
+		return errors.New("sending callbackcode failed")
 	}
 	return nil
 }
@@ -228,7 +228,7 @@ func (m *MFPClient) getMFPUserID() error {
 // Any food product that you like
 func (m *MFPClient) SearchFoodWithoutPagination(foodName string) (*models.FoodSearchResponse, error) {
 	if len(m.Username) == 0 || len(m.Password) == 0 {
-		return nil, errors.New("Mode without authentication active")
+		return nil, errors.New("mode without authentication active")
 	}
 
 	url := utils.BuildFoodSearchURL(foodName, fmt.Sprint(constants.APIBaseURL+"/v2/search/nutrition"))
@@ -289,7 +289,7 @@ func (m *MFPClient) InitialLoad() error {
 // Refreshes the user token
 func (m *MFPClient) RefreshToken() error {
 	if len(m.Username) == 0 || len(m.Password) == 0 {
-		return errors.New("Mode without authentication active")
+		return errors.New("mode without authentication active")
 	}
 
 	bodyString := fmt.Sprintf("grant_type=refresh_token&refresh_token=%s&client_id=%s&client_secret=%s&user_id=%s", m.IDTokenResponse.RefreshToken, constants.ClientID, constants.ClientSecret, m.MFPUserID)
