@@ -20,29 +20,29 @@ func TestInitialLoad(t *testing.T) {
 	require.NotNil(t, testClient.IDTokenResponse)
 }
 
-func TestSearchFood(t *testing.T) {
-	food, err := testClient.SearchFoodWithoutPagination("Pizza")
-	if err != nil {
-		t.Fatal(err)
-	}
-	require.NotNil(t, food)
-	require.NoError(t, err)
-}
+// func TestSearchFood(t *testing.T) {
+// 	food, err := testClient.SearchFoodWithoutPagination("Pizza")
+// 	if err != nil {
+// 		t.Fatal(err)
+// 	}
+// 	require.NotNil(t, food)
+// 	require.NoError(t, err)
+// }
 
-func TestRefreshToken(t *testing.T) {
-	err := testClient.RefreshToken()
-	if err != nil {
-		t.Fatal(err)
-	}
-	require.NoError(t, err)
-	require.NotNil(t, testClient.AccessToken)
-}
+// func TestRefreshToken(t *testing.T) {
+// 	err := testClient.RefreshToken()
+// 	if err != nil {
+// 		t.Fatal(err)
+// 	}
+// 	require.NoError(t, err)
+// 	require.NotNil(t, testClient.AccessToken)
+// }
 
-func TestFoodSearchWithoutAuth(t *testing.T) {
-	result, err := testClient.SearchFoodWithoutAuth("Pizza", 10, 1)
-	if err != nil {
-		t.Fatal(err)
-	}
-	require.NoError(t, err)
-	require.NotNil(t, result)
-}
+// func TestFoodSearchWithoutAuth(t *testing.T) {
+// 	result, err := testClient.SearchFoodWithoutAuth("Pizza", 10, 1)
+// 	if err != nil {
+// 		t.Fatal(err)
+// 	}
+// 	require.NoError(t, err)
+// 	require.NotNil(t, result)
+// }
