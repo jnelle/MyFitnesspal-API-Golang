@@ -3,14 +3,14 @@ module github.com/jnelle/MyFitnesspal-API-Golang
 go 1.18
 
 require (
-	github.com/bytedance/sonic v1.5.0
+	github.com/bytedance/sonic v1.6.0
 	github.com/golang-jwt/jwt/v4 v4.4.2
-	github.com/stretchr/testify v1.8.0
+	github.com/stretchr/testify v1.8.1
 	golang.org/x/net v0.0.0-20220225172249-27dd8689420f
 )
 
 require (
-	github.com/chenzhuoyu/base64x v0.0.0-20220526154910-8bf9453eb81a // indirect
+	github.com/chenzhuoyu/base64x v0.0.0-20221115062448-fe3a3abad311 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/klauspost/cpuid/v2 v2.1.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
